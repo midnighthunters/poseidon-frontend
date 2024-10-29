@@ -22,9 +22,8 @@ jobs:
         run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: main
-          BRANCH: main
-          FOLDER: poseidon_frontend/dist/browser
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./poseidon_frontend/dist/browser
+          publish_branch: gh-pages
