@@ -24,7 +24,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v2
         with:
-          GITHUB_TOKEN: ${{ secrets.poseidon_token }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: main
           BRANCH: main
           FOLDER: poseidon_frontend/dist/browser
