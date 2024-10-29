@@ -24,7 +24,7 @@ jobs:
           npm install -g @angular/cli
 
       - name: Build the application
-        run: ng build --output-path=dist
+        run: ng build --output-path=dist/koli-frontend
 
       - name: Deploy to GitHub Pages
         run: |
