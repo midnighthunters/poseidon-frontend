@@ -7,6 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration=production --base-href=/koli_frontend/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:koli_frontend": "node dist/koli_frontend/server/server.mjs"
