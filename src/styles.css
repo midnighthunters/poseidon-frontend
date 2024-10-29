@@ -1,0 +1,19 @@
+
+.back-button {
+    color: #007bff; /* Set button color */
+    border: none;
+    padding: 5px; /* Adjust padding for smaller button */
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .back-button:hover {
+    color: #0056b3; /* Change color on hover */
+  }
+  
+  .back-button i {
+    margin-right: 5px;
+  }
+  

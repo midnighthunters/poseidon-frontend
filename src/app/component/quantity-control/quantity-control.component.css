@@ -1,0 +1,41 @@
+.quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .quantity-btn:active {
+    transform: translateY(1px);
+  }
+  
+  /* Style the plus and minus buttons separately */
+  .quantity-controls button:first-of-type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .quantity-controls button:last-of-type {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .quantity-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  

@@ -1,0 +1,21 @@
+<button (click)="goBack()" class="back-button">
+  <i class="fas fa-arrow-left"></i> Back
+</button>
+
+<div *ngIf="product" class="product-details">
+  <div class="image-container">
+    <img [src]="product.imageUrl" class="product-image" alt="Product Image">
+  </div>
+
+  <div class="product-info">
+    <h2>{{ product.name }}</h2>
+    <p class="description">{{ product.description }}</p>
+    <p class="price">${{ product.price }}</p>
+
+    <div class="quantity-controls">
+      <app-quantity-control [quantity]="quantity" (quantityChange)="updateQuantity($event)"></app-quantity-control>
+    </div>
+
+    <button (click)="navigateToCheckout()" class="btn btn-success checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>

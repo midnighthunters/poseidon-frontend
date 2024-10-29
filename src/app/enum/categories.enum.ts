@@ -1,0 +1,9 @@
+export enum Categories {
+    SPORTS_SHOES = 'SPORTS_SHOES',
+    CASUAL_SHOES = 'CASUAL_SHOES',
+    CLOGS = 'CLOGS',
+    SLIPPERS = 'SLIPPERS',
+    FORMAL_SHOES = 'FORMAL_SHOES',
+    BOOTS = 'BOOTS',
+    ESPADRILLES = 'ESPADRILLES'
+  }

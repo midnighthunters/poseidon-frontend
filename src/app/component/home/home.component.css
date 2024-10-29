@@ -1,0 +1,69 @@
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-row > div {
+  flex-basis: 25%; /* Each product takes up maximum 25% width */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Adjust spacing between products if needed */
+.product-row > div:not(:last-child) {
+  margin-right: 15px;
+}
+
+@media (max-width: 992px) {
+  .product-row > div {
+    flex-basis: 33.33%; /* Each product takes up maximum 33.33% width on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-row > div {
+    flex-basis: 50%; /* Each product takes up maximum 50% width on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-row > div {
+    flex-basis: 100%; /* Each product takes up maximum 100% width on extra small screens */
+  }
+}
+
+
+.carousel-container {
+  height: 50vh; /* Adjust the height as needed */
+}
+
+
+/* Adjusting the Carousel Height */
+.carousel-item img {
+  height: 80vh; /* Example: 50% of the viewport height */
+}
+
+/* Optional: Adjust the caption styling if necessary */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+}
+
+.carousel-caption h5 {
+  margin-bottom: 0;
+}
+
+
+.carousel {
+  width: 100%; /* Take up the entire width of its container */
+}
+
+.carousel-image {
+  width: 100%; 
+  height: 200px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain aspect ratio while covering the entire space */
+}
+
+

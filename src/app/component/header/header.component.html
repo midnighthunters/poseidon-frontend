@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Koli</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="navigateToHome()">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li *ngFor="let category of categories">
+              <a class="dropdown-item" (click)="navigateToCategoriesPage(category)">{{ category }}</a>
+            </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCart" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownCart">
+          <app-cart></app-cart>
+          <ng-container>
+          <div class="dropdown-item text-center">
+            <button class="btn btn-primary btn-proceed" (click)="proceedToCheckout()">Proceed to Checkout</button>
+          </div>
+          </ng-container>
+        </ul>
+      </li>
+      <li *ngIf="!isAuthenticated">
+        <a class="nav-link" (click)="navigateToAuthPage()">
+          <i class="fas fa-sign-in-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

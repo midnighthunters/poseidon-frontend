@@ -1,0 +1,61 @@
+<div class="container checkout-container">
+  <button (click)="goBack()" class="back-button">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+
+  <div class="checkout-content">
+    <div class="cart-container">
+      <app-cart class="cart"></app-cart>
+    </div>
+
+    <div class="address-container">
+      <div class="checkout-box">
+        <ng-container *ngIf="!isAuthenticated">
+          <div class="checkout-section">
+            <p class="text-muted mb-3">Login for faster checkout experience</p>
+            <button class="login-button btn btn-primary" (click)="proceedToLogin()">Login</button>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="!isAuthenticated; else addressForm">
+          <form (ngSubmit)="proceedToPayment()" class="checkout-form card">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" [(ngModel)]="address" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" [(ngModel)]="phoneNumber" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+            </div>
+          </form>
+        </ng-container>
+
+        <ng-template #addressForm>
+          <div class="button-group">
+            <label>
+              <input type="radio" name="addressOption" (click)="fetchExistingAddress()" >
+              Use Existing Address
+            </label>
+            <label>
+              <input type="radio" name="addressOption" (click)="toggleAddressForm()">
+              Enter New Address
+            </label>
+          </div>
+
+          <div *ngIf="showAddressForm">
+            <input type="text" [(ngModel)]="newAddress" placeholder="Enter new address">
+            <button (click)="saveNewAddress()">Save Address</button>
+          </div>
+
+
+          <div *ngIf="address !== null && !showAddressForm">
+            <p>{{ address }}</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

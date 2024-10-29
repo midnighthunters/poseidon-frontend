@@ -1,0 +1,7 @@
+<div class="row">
+    <div *ngFor="let product of products" class="col-md-4 mb-4">
+      <div (click)="redirectToProductDetails(product.id)">
+        <app-product [product]="product"></app-product>
+      </div>
+    </div>
+  </div>

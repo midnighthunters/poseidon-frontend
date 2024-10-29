@@ -1,0 +1,32 @@
+	
+		How to resolve Blob issue?
+		use produces == json 
+		
+		how to resolve 403 forbidden issue?
+		csrf disable 
+		
+		How to resolve cors issue?
+		It is coming because we are sending some wrong request 
+		
+		It gets resolved by doing code changes 
+		It has nothing to do with product details
+		
+		
+		localStorage is not defined
+		It works with isPlatformBrowser only
+		
+		
+	   stop a specific port 
+	   
+		netstat -ano | findstr :10102
+		taskkill /PID 28052 /F
+		
+		
+		
+			
+		Products page ----> Products details page ----> Checkout ----> payments 
+									              ----> login ----> Checkout ---> payments
+												  
+												  
+		app-product error 
+			restart the applciation

@@ -1,0 +1,27 @@
+<div class="cart">
+  <!-- Cart Items -->
+  <div *ngFor="let product of productsInCart" class="cart-item card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="getProductImageUrl(product.productId) | async" class="card-img img-fluid" alt="Product Image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.productId }}</h5>
+          <app-quantity-control [quantity]="product.quantity || 0" (quantityChange)="updateQuantity(product, $event)"></app-quantity-control>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-total card">
+    <div class="card-body">
+      <h5 class="card-title">Total: ${{ total }}</h5>
+    </div>
+  </div>
+
+  <div *ngIf="productsInCart.length === 0" class="alert alert-warning mt-3" role="alert">
+    Your cart is empty.
+  </div>
+  
+</div>

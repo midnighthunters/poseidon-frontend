@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <div *ngIf="!isAuthenticated && !otpSent" class="login-form">
+          <h2 class="text-center mb-4">Login</h2>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="phoneIdentity.countryCode" class="form-control" placeholder="Country Code">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="phoneIdentity.phoneNumber" class="form-control" placeholder="Phone Number">
+          </div>
+          <button (click)="sendOTP()" class="btn btn-primary btn-block">Send OTP</button>
+          <div *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</div>
+        </div>
+
+        <div *ngIf="!isAuthenticated && otpSent" class="login-form mt-4">
+          <h2 class="text-center mb-4">Enter OTP</h2>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="verifyIdentityRequest.otp" class="form-control" placeholder="OTP">
+          </div>
+          <button (click)="verifyOTP()" class="btn btn-primary btn-block">Verify OTP</button>
+          <div *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</div>
+        </div>
+
+        <div *ngIf="isAuthenticated">
+          <button (click)="logout()" class="btn btn-primary btn-block">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

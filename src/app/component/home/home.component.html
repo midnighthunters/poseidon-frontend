@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <!-- Search input field -->
+      <input type="text" [(ngModel)]="searchQuery" (input)="filterProducts()" class="form-control" placeholder="Search products...">
+    </div>
+    <div class="col-md-6">
+      <!-- Sort dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Sort by Price
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+          <li (click)="sortProducts('asc')"><a class="dropdown-item">Low to High</a></li>
+          <li (click)="sortProducts('desc')"><a class="dropdown-item">High to Low</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 mb-4"> 
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+            <img [src]="item.imageUrl" class="d-block w-100" alt="{{ item.id }}">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let product of filteredProducts" class="col-md-4 mb-4">
+      <div (click)="redirectToProductDetails(product.id)">
+        <app-product [product]="product"></app-product>
+      </div>
+    </div>
+  </div>
+</div>
