@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          npx angular-cli-ghpages --dir=dist/poseidon-frontend
+          npx angular-cli-ghpages --dir=dist/koli-frontend
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
