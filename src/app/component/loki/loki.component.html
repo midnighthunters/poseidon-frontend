@@ -1,0 +1,17 @@
+<div class="gallery">
+  <!-- Large Image with Animation -->
+  <div [@fadeInOut]>
+    <img [src]="largeImage" alt="Large Image" class="large-image" />
+  </div>
+
+  <!-- Thumbnail Images -->
+  <div class="thumbnail-container">
+    <img
+      *ngFor="let image of smallImages"
+      [src]="image"
+      alt="Thumbnail"
+      (click)="changeLargeImage(image)"
+      class="thumbnail"
+    />
+  </div>
+</div>

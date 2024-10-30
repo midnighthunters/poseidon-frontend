@@ -4,12 +4,14 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ProductdetailComponent } from './component/productdetail/productdetail.component';
 import { AuthComponent } from './component/auth/auth.component';
 import { CategoriesComponent } from './component/categories/categories.component';
+import { LokiComponent } from './component/loki/loki.component';
 
 export const routes: Routes = [
-    { 'path': '', redirectTo: '/home', pathMatch: 'full' },
-    {'path': 'home', component: HomeComponent },
-    {'path':'product/:id',component:ProductdetailComponent},
-    {'path':'auth',component:AuthComponent},
-    {'path':'categories',component:CategoriesComponent},
-    {'path':'checkout',component:CheckoutComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'product/:id', component: ProductdetailComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: 'categories', component: CategoriesComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'loki', component: LokiComponent },
 ];
