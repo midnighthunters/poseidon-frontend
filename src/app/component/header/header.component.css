@@ -1,54 +1,106 @@
 /* Navbar */
 .navbar-brand {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
 }
 
 .navbar-nav .nav-link {
-    color: #333;
+  color: #333;
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #007bff; /* Active link color */
+  color: #007bff; /* Active link color */
 }
 
 /* Dropdown Menu */
 .dropdown-menu .dropdown-item {
-    color: #333;
+  color: #333;
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #f8f9fa; /* Hover background color */
+  background-color: #f8f9fa; /* Hover background color */
 }
 
 /* Cart Dropdown */
 .dropdown-item.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown-menu.dropdown-menu-right {
-    left: auto;
-    right: 0;
+  left: auto;
+  right: 0;
 }
 
 .btn-proceed {
-    background-color: #007bff; /* Bootstrap primary color */
-    border-color: #007bff; /* Bootstrap primary color */
-    color: #fff; /* White text color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 8px 16px; /* Padding */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-  
-  .btn-proceed:hover {
-    background-color: #0056b3; /* Darker shade of primary color on hover */
-  }
-  
-  .btn-proceed:active {
-    transform: translateY(1px); /* Slight vertical movement when clicked */
-  }
-  
+  background-color: #007bff; /* Bootstrap primary color */
+  border-color: #007bff; /* Bootstrap primary color */
+  color: #fff; /* White text color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 8px 16px; /* Padding */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-proceed:hover {
+  background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+.btn-proceed:active {
+  transform: translateY(1px); /* Slight vertical movement when clicked */
+}
+
+.search-filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px; /* Adjust width as needed */
+}
+
+.sort-dropdown {
+  margin-left: 10px;
+}
+
+.sort-button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.sort-dropdown {
+  position: relative; /* Ensure that the button is the relative positioning context for the dropdown */
+}
+
+.dropdown-menu {
+  position: absolute; /* Make sure it's positioned below the button */
+  top: 100%; /* Align directly below the button */
+  left: 0; /* Align to the left of the button */
+  right: 0; /* Remove unnecessary right alignment */
+  margin-top: 5px; /* Add some spacing between the button and the dropdown */
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu-end {
+  left: auto; /* For right alignment */
+  right: 0;
+}
+
+.dropdown-item {
+  padding: 8px 16px; /* Adjust padding for better spacing */
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa; /* Hover background color */
+}

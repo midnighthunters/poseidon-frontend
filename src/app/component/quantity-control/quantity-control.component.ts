@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './quantity-control.component.html',
-  styleUrl: './quantity-control.component.css'
+  styleUrl: './quantity-control.component.css',
 })
 export class QuantityControlComponent {
   @Input() quantity: number = 0;

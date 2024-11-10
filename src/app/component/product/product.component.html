@@ -1,15 +1,15 @@
 <div class="card h-100 product-card">
-  <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top">
+  <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top" />
   <div class="card-body">
     <h5 class="card-title">{{ product.name }}</h5>
     <p class="card-text">Price: ${{ product.price }}</p>
-    <div *ngIf="inCart; else addCart" class="cart-management">
+    <!-- <div *ngIf="inCart; else addCart" class="cart-management">
       <button class="btn btn-outline-primary" (click)="removeFromCart($event)">-</button>
       <span class="quantity">{{ getProductQuantity() }}</span>
       <button class="btn btn-outline-primary" (click)="addToCart($event)">+</button>
     </div>
     <ng-template #addCart>
       <button class="btn btn-primary add-to-cart" (click)="addToCart($event)">Add to Cart</button>
-    </ng-template>
+    </ng-template> -->
   </div>
 </div>

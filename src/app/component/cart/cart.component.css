@@ -43,17 +43,42 @@
   margin-bottom: 0;
 }
 
-  
-  .checkout-summary {
-    max-width: 400px; /* Adjust based on your design */
-    margin: 0 auto; /* Center the card horizontally */
-  }
-  
-  .checkout-summary .card-title {
-    font-size: 1.25rem;
-  }
-  
-  .total-price {
-    margin-top: 20px;
-  }
-  
+.checkout-summary {
+  max-width: 400px; /* Adjust based on your design */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+.checkout-summary .card-title {
+  font-size: 1.25rem;
+}
+
+.total-price {
+  margin-top: 20px;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Bootstrap's 'btn-danger' color */
+  color: white; /* Text color for the trash icon */
+  border: none;
+  padding: 5px 10px; /* Padding for better clickability */
+  font-size: 1.2rem; /* Icon size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn i {
+  margin: 0;
+}
+
+.delete-btn:hover {
+  background-color: #c82333; /* Darker red when hovered */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.delete-btn:active {
+  background-color: #bd2130; /* Even darker red when clicked */
+  transform: scale(1); /* Reset zoom on click */
+}

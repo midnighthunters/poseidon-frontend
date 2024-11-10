@@ -20,12 +20,12 @@ import { CommonModule } from '@angular/common';
 })
 export class LokiComponent {
   // Initialize images
-  largeImage: string = 'assets/005.jpg';
+  largeImage: string = 'assets/001.jpeg';
   smallImages: string[] = [
-    'assets/001.jpg',
-    'assets/002.jpg',
-    'assets/003.jpg',
-    'assets/004.jpg',
+    'assets/001.jpeg',
+    'assets/002.jpeg',
+    'assets/003.jpeg',
+    'assets/004.jpeg',
   ];
 
   // Change large image on click

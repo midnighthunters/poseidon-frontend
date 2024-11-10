@@ -1,10 +1,28 @@
-<button (click)="goBack()" class="back-button">
+<!-- <button (click)="goBack()" class="back-button">
   <i class="fas fa-arrow-left"></i> Back
-</button>
+</button> -->
 
 <div *ngIf="product" class="product-details">
-  <div class="image-container">
-    <img [src]="product.imageUrl" class="product-image" alt="Product Image">
+  <!-- <div class="image-container">
+    <img [src]="product.imageUrl" class="product-image" alt="Product Image" />
+  </div> -->
+
+  <div class="gallery">
+    <!-- Large Image with Animation -->
+    <div [@fadeInOut]>
+      <img [src]="largeImage" alt="Large Image" class="large-image" />
+    </div>
+
+    <!-- Thumbnail Images -->
+    <div class="thumbnail-container">
+      <img
+        *ngFor="let image of smallImages"
+        [src]="image"
+        alt="Thumbnail"
+        (click)="changeLargeImage(image)"
+        class="thumbnail"
+      />
+    </div>
   </div>
 
   <div class="product-info">
@@ -12,10 +30,35 @@
     <p class="description">{{ product.description }}</p>
     <p class="price">${{ product.price }}</p>
 
-    <div class="quantity-controls">
-      <app-quantity-control [quantity]="quantity" (quantityChange)="updateQuantity($event)"></app-quantity-control>
+    <!-- <div class="quantity-controls">
+      <app-quantity-control
+        [quantity]="quantity"
+        (quantityChange)="updateQuantity($event)"
+      ></app-quantity-control>
+    </div> -->
+    <div class="size-selection">
+      <h3>Select Shoe Size:</h3>
+      <div class="size-options">
+        <div *ngFor="let size of shoeSizes" class="size-item">
+          <label class="size-option">
+            <input
+              type="radio"
+              name="shoeSize"
+              [value]="size"
+              [(ngModel)]="selectedSize"
+              class="size-input"
+            />
+            <span class="size-label">{{ size }}</span>
+          </label>
+        </div>
+      </div>
     </div>
 
-    <button (click)="navigateToCheckout()" class="btn btn-success checkout-btn">Proceed to Checkout</button>
+    <button
+      class="btn"
+      (click)="inCart ? navigateToCheckout() : addToCart($event)"
+    >
+      {{ inCart ? "Checkout" : "Add to Cart" }}
+    </button>
   </div>
 </div>
